@@ -2,7 +2,7 @@
 
 一个功能完整的React Native GroMore广告插件，支持多种广告类型和高级功能。插件包含完整的JavaScript层和Android原生模块。
 
-## 版本号
+## GroMore版本号
 
 open_ad_sdk_7.1.3.2
 
