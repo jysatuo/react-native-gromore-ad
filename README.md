@@ -89,7 +89,7 @@ if (ok) {
 }
 ```
 
-### 5. 显示横幅/插屏（如已开放）
+### 5. 显示横幅/插屏（暂未加入）
 
 ```typescript
 // 横幅（需要在页面中放置对应的 React 组件）
@@ -203,17 +203,13 @@ MIT License
 **支付宝**
 
 <div align="left">
-
-<img src="../../assets/images/app/alipay.jpg" alt="支付宝收款码" width="300" />
-
+<img width="1118" height="1524" alt="wxpay" src="https://github.com/user-attachments/assets/033e94d4-a775-4bd3-b98a-637beaaae554" />
 </div>
 
 **微信支付**
 
 <div align="left">
-
-<img src="../../assets/images/app/wxpay.png" alt="微信收款码" width="300" />
-
+<img width="1118" height="1524" alt="wxpay" src="https://github.com/user-attachments/assets/8e8a14f3-2cb6-4738-a906-f96792bc2a91" />
 </div>
 
 非常感谢你的支持！🙏 也可添加微信联系：`Jysatuo1314`（说明来意）。
