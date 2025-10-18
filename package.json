@@ -1,0 +1,43 @@
+{
+  "name": "@skylantern/gromore-ad",
+  "version": "0.1.4",
+  "description": "GroMore advertising SDK bridge for React Native (Android)",
+  "homepage": "https://github.com/jysatuo/react-native-gromore-ad#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jysatuo/react-native-gromore-ad.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jysatuo/react-native-gromore-ad/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "index.js",
+  "types": "index.d.ts",
+  "react-native": "index.js",
+  "keywords": [
+    "react-native",
+    "android",
+    "gromore",
+    "ads",
+    "bytedance",
+    "advertising"
+  ],
+  "author": "SkyLanternWishes Team",
+  "license": "MIT",
+  "files": [
+    "android/",
+    "index.js",
+    "index.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-native": ">=0.71"
+  }
+}

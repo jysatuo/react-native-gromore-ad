@@ -2,6 +2,10 @@
 
 一个功能完整的React Native GroMore广告插件，支持多种广告类型和高级功能。插件包含完整的JavaScript层和Android原生模块。
 
+## 版本号
+
+open_ad_sdk_7.1.3.2
+
 ## 功能特性
 
 - 🚀 **开屏广告** - 应用启动时的全屏广告
@@ -89,7 +93,7 @@ if (ok) {
 }
 ```
 
-### 5. 显示横幅/插屏（如已开放）
+### 5. 显示横幅/插屏（开发中）
 
 ```typescript
 // 横幅（需要在页面中放置对应的 React 组件）
@@ -204,7 +208,7 @@ MIT License
 
 <div align="left">
 
-<img src="../../assets/images/app/alipay.jpg" alt="支付宝收款码" width="300" />
+<img src="https://github.com/user-attachments/assets/033e94d4-a775-4bd3-b98a-637beaaae554" alt="支付宝收款码" width="300" />
 
 </div>
 
@@ -212,7 +216,7 @@ MIT License
 
 <div align="left">
 
-<img src="../../assets/images/app/wxpay.png" alt="微信收款码" width="300" />
+<img src="https://github.com/user-attachments/assets/8e8a14f3-2cb6-4738-a906-f96792bc2a91" alt="微信收款码" width="300" />
 
 </div>
 
