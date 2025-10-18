@@ -93,7 +93,11 @@ if (ok) {
 }
 ```
 
+<<<<<<< HEAD
 ### 5. 显示横幅/插屏（开发中）
+=======
+### 5. 显示横幅/插屏（暂未加入）
+>>>>>>> f25bd0819cf49eabc38c4417b95290fb96bcca70
 
 ```typescript
 // 横幅（需要在页面中放置对应的 React 组件）
@@ -207,17 +211,25 @@ MIT License
 **支付宝**
 
 <div align="left">
+<<<<<<< HEAD
 
 <img src="https://github.com/user-attachments/assets/033e94d4-a775-4bd3-b98a-637beaaae554" alt="支付宝收款码" width="300" />
 
+=======
+<img width="300" alt="wxpay" src="https://github.com/user-attachments/assets/033e94d4-a775-4bd3-b98a-637beaaae554" />
+>>>>>>> f25bd0819cf49eabc38c4417b95290fb96bcca70
 </div>
 
 **微信支付**
 
 <div align="left">
+<<<<<<< HEAD
 
 <img src="https://github.com/user-attachments/assets/8e8a14f3-2cb6-4738-a906-f96792bc2a91" alt="微信收款码" width="300" />
 
+=======
+<img width="300" alt="wxpay" src="https://github.com/user-attachments/assets/8e8a14f3-2cb6-4738-a906-f96792bc2a91" />
+>>>>>>> f25bd0819cf49eabc38c4417b95290fb96bcca70
 </div>
 
 非常感谢你的支持！🙏 也可添加微信联系：`Jysatuo1314`（说明来意）。
