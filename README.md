@@ -203,13 +203,13 @@ MIT License
 **支付宝**
 
 <div align="left">
-<img width="1118" height="1524" alt="wxpay" src="https://github.com/user-attachments/assets/033e94d4-a775-4bd3-b98a-637beaaae554" />
+<img width="300" alt="wxpay" src="https://github.com/user-attachments/assets/033e94d4-a775-4bd3-b98a-637beaaae554" />
 </div>
 
 **微信支付**
 
 <div align="left">
-<img width="1118" height="1524" alt="wxpay" src="https://github.com/user-attachments/assets/8e8a14f3-2cb6-4738-a906-f96792bc2a91" />
+<img width="300" alt="wxpay" src="https://github.com/user-attachments/assets/8e8a14f3-2cb6-4738-a906-f96792bc2a91" />
 </div>
 
 非常感谢你的支持！🙏 也可添加微信联系：`Jysatuo1314`（说明来意）。
