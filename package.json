@@ -11,7 +11,6 @@
     "url": "https://github.com/jysatuo/react-native-gromore-ad/issues"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com",
     "access": "public"
   },
   "main": "index.js",
