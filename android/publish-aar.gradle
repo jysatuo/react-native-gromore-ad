@@ -1,27 +1,38 @@
 apply plugin: 'maven-publish'
 
-// 要发布的 AAR 列表（groupId, artifactId, version）
+// 要发布的 AAR 列表：[groupId, artifactId, version, 文件相对路径]
 def aarMap = [
-    'open_ad_sdk'                    : ['com.pangle.cn', 'open-ad-sdk', '7.1.3.2'],
-    'mediation_gdt_adapter'          : ['com.qq.gdt', 'mediation-gdt-adapter', '4.642.1512.0'],
-    'mediation_admob_adapter'        : ['com.google.admob', 'mediation-admob-adapter', '17.2.0.71'],
-    'mediation_ks_adapter'           : ['com.ksad', 'mediation-ks-adapter', '4.6.30.1.0'],
-    'mediation_mintegral_adapter'    : ['com.mintegral', 'mediation-mintegral-adapter', '16.6.57.14'],
-    'mediation_sigmob_adapter'       : ['com.sigmob', 'mediation-sigmob-adapter', '4.24.0.0'],
-    'mediation_unity_adapter'        : ['com.unity', 'mediation-unity-adapter', '4.3.0.38'],
-    'GDTSDK.unionNormal'             : ['com.qq.gdt', 'gdt-sdk', '4.642.1512'],
-    'kssdk-ad'                       : ['com.ksad', 'ks-ad-sdk', '4.6.30.1'],
-    'unity-ads'                      : ['com.unity3d', 'unity-ads', '4.3.0'],
-    'windAd'                         : ['com.sigmob', 'windad-sdk', '4.24.0'],
-    'windAd-common'                  : ['com.sigmob', 'windad-common', '1.8.3'],
+    // GroMore SDK 本体
+    'open_ad_sdk'                 : ['com.pangle.cn', 'open-ad-sdk', '7.1.3.2',        'libs/open_ad_sdk_7.1.3.2.aar'],
+
+    // 各聚合适配器（adapter 目录）
+    'mediation_gdt_adapter'       : ['com.qq.gdt', 'mediation-gdt-adapter', '4.642.1512.0', 'libs/adapter/mediation_gdt_adapter_4.642.1512.0.aar'],
+    'mediation_admob_adapter'     : ['com.google.admob', 'mediation-admob-adapter', '17.2.0.71', 'libs/adapter/mediation_admob_adapter_17.2.0.71.aar'],
+    'mediation_ks_adapter'        : ['com.ksad', 'mediation-ks-adapter', '4.6.30.1.0', 'libs/adapter/mediation_ks_adapter_4.6.30.1.0.aar'],
+    'mediation_mintegral_adapter' : ['com.mintegral', 'mediation-mintegral-adapter', '16.6.57.14', 'libs/adapter/mediation_mintegral_adapter_16.6.57.14.aar'],
+    'mediation_sigmob_adapter'    : ['com.sigmob', 'mediation-sigmob-adapter', '4.24.0.0', 'libs/adapter/mediation_sigmob_adapter_4.24.0.0.aar'],
+    'mediation_unity_adapter'     : ['com.unity', 'mediation-unity-adapter', '4.3.0.38', 'libs/adapter/mediation_unity_adapter_4.3.0.38.aar'],
+
+    // 各广告网络 SDK（adn 目录）
+    'GDTSDK.unionNormal'          : ['com.qq.gdt', 'gdt-sdk', '4.642.1512',  'libs/adn/GDTSDK.unionNormal.4.642.1512.aar'],
+    'kssdk-ad'                    : ['com.ksad', 'ks-ad-sdk', '4.6.30.1',    'libs/adn/kssdk-ad-4.6.30.1.aar'],
+    'unity-ads'                   : ['com.unity3d', 'unity-ads', '4.3.0',    'libs/adn/unity-ads-4.3.0.aar'],
+    'windAd'                      : ['com.sigmob', 'windad-sdk', '4.24.0',   'libs/adn/windAd-4.24.0.aar'],
+    'windAd-common'               : ['com.sigmob', 'windad-common', '1.8.3', 'libs/adn/windAd-common-1.8.3.aar'],
 ]
 
-aarMap.each { fileName, coord ->
-    publishing.publications.create(fileName, MavenPublication) {
+aarMap.each { key, coord ->
+    def relPath = coord[3]
+    def aarFile = file(relPath)
+    if (!aarFile.exists()) {
+        logger.warn("[publish-aar] 跳过 ${key}，未找到文件：${relPath}")
+        return // 文件不存在则跳过该 publication，避免发布失败
+    }
+    publishing.publications.create(key, MavenPublication) {
         groupId    = coord[0]
         artifactId = coord[1]
         version    = coord[2]
-        artifact file("libs/${fileName}.aar")
+        artifact aarFile
     }
 }
 
