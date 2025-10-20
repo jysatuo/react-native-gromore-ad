@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply from: 'publish-aar.gradle'
 
 android {
     compileSdkVersion 36
@@ -26,24 +25,50 @@ android {
     }
 }
 
+repositories {
+    flatDir {
+        dirs 'libs', 'libs/adapter', 'libs/adn'
+    }
+}
+
 dependencies {
     implementation 'com.facebook.react:react-native:+'
 
-    // ===  GroMore SDK 及聚合适配器（坐标版） ===
-    implementation 'com.pangle.cn:open-ad-sdk:7.1.3.2'
-    implementation 'com.qq.gdt:mediation-gdt-adapter:4.642.1512.0'
-    implementation 'com.google.admob:mediation-admob-adapter:17.2.0.71'
-    implementation 'com.ksad:mediation-ks-adapter:4.6.30.1.0'
-    implementation 'com.mintegral:mediation-mintegral-adapter:16.6.57.14'
-    implementation 'com.sigmob:mediation-sigmob-adapter:4.24.0.0'
-    implementation 'com.unity:mediation-unity-adapter:4.3.0.38'
+    // === GroMore SDK 本体 ===
+    implementation(name: 'open_ad_sdk_7.1.3.2', ext: 'aar')
 
-    // === 广告网络 SDK ===
-    implementation 'com.qq.gdt:gdt-sdk:4.642.1512'
-    implementation 'com.ksad:ks-ad-sdk:4.6.30.1'
-    implementation 'com.unity3d:unity-ads:4.3.0'
-    implementation 'com.sigmob:windad-sdk:4.24.0'
-    implementation 'com.sigmob:windad-common:1.8.3'
+    // === 聚合适配器（按需启用）===
+    implementation(name: 'mediation_gdt_adapter_4.642.1512.0', ext: 'aar')
+    implementation(name: 'mediation_admob_adapter_17.2.0.71', ext: 'aar')
+    implementation(name: 'mediation_ks_adapter_4.6.30.1.0', ext: 'aar')
+    implementation(name: 'mediation_mintegral_adapter_16.6.57.14', ext: 'aar')
+    implementation(name: 'mediation_sigmob_adapter_4.24.0.0', ext: 'aar')
+    implementation(name: 'mediation_unity_adapter_4.3.0.38', ext: 'aar')
+    // Mintegral 适配器已启用，下面启用其 SDK 组件
+
+    // === 广告网络 SDK（按需启用）===
+    implementation(name: 'GDTSDK.unionNormal.4.642.1512', ext: 'aar')
+    implementation(name: 'kssdk-ad-4.6.30.1', ext: 'aar')
+    implementation(name: 'unity-ads-4.3.0', ext: 'aar')
+    implementation(name: 'windAd-4.24.0', ext: 'aar')
+    implementation(name: 'windAd-common-1.8.3', ext: 'aar')
+
+    // === Mintegral (mbridge) SDK 全量组件（16.6.57）===
+    implementation(name: 'mbridge_videojs_16.6.57', ext: 'aar')
+    implementation(name: 'mbridge_mbjscommon_16.6.57', ext: 'aar')
+    implementation(name: 'mbridge_playercommon_16.6.57', ext: 'aar')
+    implementation(name: 'mbridge_reward_16.6.57', ext: 'aar')
+    implementation(name: 'mbridge_videocommon_16.6.57', ext: 'aar')
+    implementation(name: 'mbridge_interstitial_16.6.57', ext: 'aar')
+    implementation(name: 'mbridge_interstitialvideo_16.6.57', ext: 'aar')
+    implementation(name: 'mbridge_mbnative_16.6.57', ext: 'aar')
+    implementation(name: 'mbridge_nativeex_16.6.57', ext: 'aar')
+    implementation(name: 'mbridge_mbnativeadvanced_16.6.57', ext: 'aar')
+    implementation(name: 'mbridge_mbbanner_16.6.57', ext: 'aar')
+    implementation(name: 'mbridge_mbsplash_16.6.57', ext: 'aar')
+    implementation(name: 'mbridge_mbbid_16.6.57', ext: 'aar')
+    implementation(name: 'mbridge_newinterstitial_16.6.57', ext: 'aar')
+    implementation(name: 'mbridge_chinasame_16.6.57', ext: 'aar')
 
     // AndroidX
     implementation 'androidx.appcompat:appcompat:1.6.1'
