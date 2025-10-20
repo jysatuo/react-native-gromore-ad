@@ -1,6 +1,6 @@
 {
   "name": "@skylantern/gromore-ad",
-  "version": "0.1.26",
+  "version": "0.1.27",
   "description": "GroMore advertising SDK bridge for React Native (Android)",
   "homepage": "https://github.com/jysatuo/react-native-gromore-ad#readme",
   "repository": {
