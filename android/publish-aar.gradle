@@ -1,0 +1,32 @@
+apply plugin: 'maven-publish'
+
+// 要发布的 AAR 列表（groupId, artifactId, version）
+def aarMap = [
+    'open_ad_sdk'                    : ['com.pangle.cn', 'open-ad-sdk', '7.1.3.2'],
+    'mediation_gdt_adapter'          : ['com.qq.gdt', 'mediation-gdt-adapter', '4.642.1512.0'],
+    'mediation_admob_adapter'        : ['com.google.admob', 'mediation-admob-adapter', '17.2.0.71'],
+    'mediation_ks_adapter'           : ['com.ksad', 'mediation-ks-adapter', '4.6.30.1.0'],
+    'mediation_mintegral_adapter'    : ['com.mintegral', 'mediation-mintegral-adapter', '16.6.57.14'],
+    'mediation_sigmob_adapter'       : ['com.sigmob', 'mediation-sigmob-adapter', '4.24.0.0'],
+    'mediation_unity_adapter'        : ['com.unity', 'mediation-unity-adapter', '4.3.0.38'],
+    'GDTSDK.unionNormal'             : ['com.qq.gdt', 'gdt-sdk', '4.642.1512'],
+    'kssdk-ad'                       : ['com.ksad', 'ks-ad-sdk', '4.6.30.1'],
+    'unity-ads'                      : ['com.unity3d', 'unity-ads', '4.3.0'],
+    'windAd'                         : ['com.sigmob', 'windad-sdk', '4.24.0'],
+    'windAd-common'                  : ['com.sigmob', 'windad-common', '1.8.3'],
+]
+
+aarMap.each { fileName, coord ->
+    publishing.publications.create(fileName, MavenPublication) {
+        groupId    = coord[0]
+        artifactId = coord[1]
+        version    = coord[2]
+        artifact file("libs/${fileName}.aar")
+    }
+}
+
+publishing.repositories {
+    mavenLocal()   // 发布到 ~/.m2/repository
+}
+
+
