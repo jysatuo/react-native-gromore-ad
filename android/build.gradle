@@ -27,7 +27,10 @@ android {
 
 repositories {
     flatDir {
-        dirs 'libs', 'libs/adapter', 'libs/adn'
+        // ❶ 使用 rootProject.file 转为绝对路径
+        dirs rootProject.file('node_modules/@skylantern/gromore-ad/android/libs'),
+              rootProject.file('node_modules/@skylantern/gromore-ad/android/libs/adapter'),
+              rootProject.file('node_modules/@skylantern/gromore-ad/android/libs/adn')
     }
 }
 
